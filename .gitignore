@@ -1,0 +1,6 @@
+# All js bundle folder
+/dist
+
+# dependencies
+/node_modules
+
