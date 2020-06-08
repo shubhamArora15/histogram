@@ -3,18 +3,62 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- <title>Histogram - Posts / Pages </title> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
 </head>
 
 <body>
+    <div class="histo_container">
+        <div class="action_events center">
+            <button id="view_post" class="button">
+                POSTS
+            </button>
+            <button id="view_page" class="button">
+                PAGES
+            </button>
+            <button id="view_test" class="button">
+                CONCEPTS & TEST CASES
+            </button>
+        </div>
+        <div class="histo_content">
 
-    <!-- To display Post Chart -->
-    <div id="histogram_post">
-    </div>
+            <!-- To Loader -->
+            <div id="loader" style="display: none;text-align: center;">
+                Please wait
+            </div>
+            <!-- To display Post Chart -->
+            <div id="histogram_post" class="center" style="display: none;">
+            </div>
+            <!-- To display Histogram chart -->
+            <div id="histogram_page" style="display: none;">
+            </div>
+            <!-- To display Histogram Test cases -->
+            <div id="histogram_test">
+                <div class="test_content center">
+                    <h3>Concepts</h3>
+                    <ul>
+                        <li>Memoization - To save network bandwith and memory by using cache space</li>
+                        <li>ES6 - standards like class, export and import, Moduler structure</li>
+                        <li>Axios - For Production level to get error and data using promise (CDN)</li>
+                        <li>Google charts (CDN)</li>
+                    </ul>
 
-    <!-- To display Histogram chart -->
-    <div id="histogram_page">
+                    <hr>
+
+                    <h3>Unit Test</h3>
+
+                    <ul>
+                        <li>Get POSTS and PAGES POSSIBLE  - with particular parameter only. Changing 100 > 101 return error</li>
+                        <li>Click POSTS > ONLY post chart will appear.</li>
+                        <li>Click PAGES >  ONLY page chart will appear.</li>
+                        <li>Clicking on POSTS and PAGES  calculate Range for input of respective charts </li>
+                        <li>Internet Is must</li>
+                        <!-- <li></li> -->
+                    </ul>
+                </div>
+            </div>
+        </div>
     </div>
 
     <!-- To make a get call to local or 3rd party API -->
@@ -26,5 +70,6 @@
     <!-- Local Index file -->
     <script type="module" src="src/index.js"></script>
 </body>
+
 
 </html>

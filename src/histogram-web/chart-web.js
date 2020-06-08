@@ -34,8 +34,8 @@ class HistoGram {
         google.charts.load('current', { packages: ['corechart', 'bar'] });
         google.charts.setOnLoadCallback(this.drawAnnotations)
         posts.unshift(["Element", "Density", { role: "style" }]);
-        google.charts.setOnLoadCallback(() =>{
-            this.drawAnnotations({data:posts, id:'histogram_post', title:'Histogram Chart For POSTS'})
+        google.charts.setOnLoadCallback(() => {
+            this.drawAnnotations({ data: posts, id: 'histogram_post', title: 'Histogram Chart For POSTS' })
         })
     }
 
@@ -44,18 +44,19 @@ class HistoGram {
     createPagesWordCountChart = (pages) => {
         google.charts.load('current', { packages: ['corechart', 'bar'] });
         pages.unshift(["Element", "Density", { role: "style" }]);
-        google.charts.setOnLoadCallback(() =>{
-            this.drawAnnotations({data:pages, id:'histogram_page', title:'Histogram Chart For PAGES'})
+        google.charts.setOnLoadCallback(() => {
+            this.drawAnnotations({ data: pages, id: 'histogram_page', title: 'Histogram Chart For PAGES' })
         })
     }
 
     // PROCESS ANNOTATION CHART FOR POST / PAGES
     drawAnnotations(obj) {
-        if(!obj){
+        if (!obj) {
             return
         }
-        var data = google.visualization.arrayToDataTable(obj.data);
-        var view = new google.visualization.DataView(data);
+        let chart = '';
+        let data = google.visualization.arrayToDataTable(obj.data);
+        let view = new google.visualization.DataView(data);
 
         view.setColumns([0, 1,
             {
@@ -66,7 +67,7 @@ class HistoGram {
             },
             2]);
 
-        var options = {
+        let options = {
             title: obj.title,
             width: 1024,
             height: 400,
@@ -74,8 +75,9 @@ class HistoGram {
             legend: { position: "none" },
         };
 
-        var chart = new google.visualization.ColumnChart(document.getElementById(obj.id));
+        chart = new google.visualization.ColumnChart(document.getElementById(obj.id));
         chart.draw(data, options);
     }
+
 }
 export { HistoGram }
